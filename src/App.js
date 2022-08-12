@@ -26,7 +26,7 @@ const App = () => {
 
 const Button = ({onClick, text}) => <button onClick={onClick}>{text}</button>
 
-const Stat = ({value, text}) => <p>{text} {value}</p>
+const Stat = ({value, text}) => <tr><td>{text}</td> <td>{value}</td></tr>
 
 const Statistics = ({good, neutral, bad, total}) => {
   if(!total) {
@@ -39,7 +39,7 @@ const Statistics = ({good, neutral, bad, total}) => {
         <Stat text="bad" value={bad}/>
         <Stat text="total" value={total}/>
         <Stat text="average" value={(good - bad) / (total)}/>
-        <Stat text="psotive" value={ 100 *good / (total)}/>
+        <Stat text="positive" value={ 100 *good / (total)}/>
     </div>
   )
 }
